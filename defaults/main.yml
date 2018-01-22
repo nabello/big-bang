@@ -1,4 +1,2 @@
 ---
-required_packages: ['epel-release', 'vim', 'git', 'wget', 'gcc-c++', 'gcc', 'perl-core', 'python-pip',
-                    'pcre-devel', 'openssl-devel', 'expat-devel', 'bzip2-devel', 'curl-devel', 'libjpeg-devel',
-                    'libpng-devel', 'freetype-devel', 'libc-client-devel', 'libmcrypt-devel', 'libxml2-devel']
+required_packages: ['epel-release', 'vim', 'git', 'wget']
