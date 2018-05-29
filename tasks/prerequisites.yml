@@ -1,0 +1,33 @@
+---
+
+
+# Install required packages
+- name: Install required packages
+  package:
+    name: "{{item.package_name}}"
+    state: "{{ item.package_state }}"
+    use: "{{ item.package_use }}"
+  with_list: "{{ required_packages }}"
+  tags:
+      - install_required_packages
+
+
+# Ensure pip is installed
+- name: Ensured pip is installed.
+  package:
+    name: python-pip
+    state: latest
+    use: auto
+  tags:
+      - ensure_pip_is_installed
+
+
+# Install required pip modules
+- name: Install required pip modules
+  pip:
+    name: "{{ item.pip_module_name }}"
+    version: "{{ item.pip_module_version }}"
+    extra_args: "{{ item.pip_extra_args }}"
+  with_list: "{{ pip_modules }}"
+  tags:
+      - install_required_pip_modules
