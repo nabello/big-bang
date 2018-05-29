@@ -1,33 +1,43 @@
 ---
 
-
-# Install required packages
+# Install packages
 - name: Install required packages
   package:
-    name: "{{item.package_name}}"
+    name: "{{ item.package_name }}"
     state: "{{ item.package_state }}"
     use: "{{ item.package_use }}"
-  with_list: "{{ required_packages }}"
+  with_list: "{{ packages }}"
+  when: packages|length > 0
   tags:
-      - install_required_packages
+      - install_packages
 
 
-# Ensure pip is installed
-- name: Ensured pip is installed.
-  package:
-    name: python-pip
-    state: latest
-    use: auto
-  tags:
-      - ensure_pip_is_installed
-
-
-# Install required pip modules
-- name: Install required pip modules
+#######
+# PIP #
+#######
+# Install pip modules
+- name: Install pip modules
   pip:
     name: "{{ item.pip_module_name }}"
     version: "{{ item.pip_module_version }}"
     extra_args: "{{ item.pip_extra_args }}"
   with_list: "{{ pip_modules }}"
+  when: pip_modules|length > 0
   tags:
-      - install_required_pip_modules
+      - install_pip_modules
+
+
+#######
+# NPM #
+#######
+# Install npm modules
+- name: Install npm modules
+  npm:
+    name: "{{ item.npm_module_name }}"
+    version: "{{ item.npm_module_version }}"
+    global: "{{ item.npm_global_install }}"
+    state: "{{ item. npm_module_state }}"
+  with_list: "{{ npm_modules }}"
+  when: npm_modules|length > 0
+  tags:
+      - install_npm_modules

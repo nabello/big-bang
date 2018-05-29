@@ -1,10 +1,14 @@
 ---
 
-required_packages:
+packages:
   - { package_name: 'epel-release', package_state: 'latest', package_os: 'auto' }
   - { package_name: 'vim', package_state: 'latest', package_use: 'auto' }
   - { package_name: 'git', package_state: 'latest', package_use: 'auto' }
   - { package_name: 'wget', package_state: 'latest', package_use: 'auto' }
+  - { package_name: 'python-pip', package_state: 'latest', package_use: 'auto' }
 
-pip_modules:
-  - { pip_module_name: '', pip_module_version: '', pip_extra_args: '-v' }
+pip_modules: []
+#  - { pip_module_name: '', pip_module_version: '', pip_extra_args: '-v' }
+
+npm_modules: []
+#  - { npm_module_name: '', npm_module_version: '', npm_global_install: '', npm_module_state: '' }
