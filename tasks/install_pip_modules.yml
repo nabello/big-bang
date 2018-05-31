@@ -1,0 +1,15 @@
+---
+
+#######
+# PIP #
+#######
+# Install pip modules
+- name: Install pip modules
+  pip:
+    name: "{{ item.pip_module_name }}"
+    version: "{{ item.pip_module_version }}"
+    extra_args: "{{ item.pip_extra_args }}"
+  with_list: "{{ pip_modules }}"
+  when: pip_modules|length > 0
+  tags:
+      - install_pip_modules

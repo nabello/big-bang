@@ -1,0 +1,14 @@
+---
+
+############
+# Packages #
+############
+- name: Install packages
+  package:
+    name: "{{ item.package_name }}"
+    state: "{{ item.package_state }}"
+    use: "{{ item.package_use }}"
+  with_list: "{{ packages }}"
+  when: packages|length > 0
+  tags:
+      - install_packages

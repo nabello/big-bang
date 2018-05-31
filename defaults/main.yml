@@ -7,8 +7,26 @@ packages:
   - { package_name: 'wget', package_state: 'latest', package_use: 'auto' }
   - { package_name: 'python-pip', package_state: 'latest', package_use: 'auto' }
 
+
+#######
+# PIP #
+#######
 pip_modules: []
 #  - { pip_module_name: '', pip_module_version: '', pip_extra_args: '-v' }
 
+
+#######
+# NPM #
+#######
 npm_modules: []
 #  - { npm_module_name: '', npm_module_version: '', npm_global_install: '', npm_module_state: '' }
+
+
+##########
+# Nodejs #
+##########
+install_nodejs: True
+node_version: '0.10.30'
+node_tar_name: 'node-v{{ node_version }}.tar.gz'
+node_download_url: 'http://nodejs.org/dist/v{{ node_version }}/{{ node_tar_name }}'
+node_install_path: '/opt'

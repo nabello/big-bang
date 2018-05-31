@@ -1,0 +1,16 @@
+---
+
+#######
+# NPM #
+#######
+# Install npm modules
+- name: Install npm modules
+  npm:
+    name: "{{ item.npm_module_name }}"
+    version: "{{ item.npm_module_version }}"
+    global: "{{ item.npm_global_install }}"
+    state: "{{ item. npm_module_state }}"
+  with_list: "{{ npm_modules }}"
+  when: npm_modules|length > 0
+  tags:
+      - install_npm_modules
