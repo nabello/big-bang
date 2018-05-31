@@ -1,12 +1,4 @@
 ---
-# Install Required packages
-- name: Node - Install Required packages
-  package: name={{item}} state=latest
-  register: install_required_packages
-  with_items: "{{ required_packages }}"
-  tags:
-      - node_install_required_packages
-
 
 # Download tar
 - name: Node - Download tar
