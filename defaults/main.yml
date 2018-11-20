@@ -1,10 +1,6 @@
 ---
 
 packages:
-  - { package_name: 'epel-release', package_state: 'latest', package_os: 'auto' }
-  - { package_name: 'vim', package_state: 'latest', package_use: 'auto' }
-  - { package_name: 'git', package_state: 'latest', package_use: 'auto' }
-  - { package_name: 'wget', package_state: 'latest', package_use: 'auto' }
   - { package_name: 'python-pip', package_state: 'latest', package_use: 'auto' }
 
 
