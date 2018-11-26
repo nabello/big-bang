@@ -5,3 +5,4 @@
 - include_tasks: install_nodejs.yml
   when: install_nodejs| bool
 - include_tasks: install_npm_modules.yml
+- include_tasks: install_gnu_packages.yml

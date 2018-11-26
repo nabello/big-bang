@@ -1,0 +1,13 @@
+---
+
+# Choose to install/uninstall gnu packages
+- include_role:
+    name: "{{ install_gnu_role_name }}"
+  vars:
+    gnu_project: "{{ item.name }}"
+    gnu_project_version: "{{ item.version }}"
+    install: "{{ item.install }}"
+    uninstall: "{{ item.uninstall }}"
+  with_list: "{{ gnu_packages }}"
+  tags:
+      - gnu_packages
