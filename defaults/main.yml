@@ -21,8 +21,16 @@ npm_modules: []
 ##########
 # Nodejs #
 ##########
-install_nodejs: True
+install_nodejs: false
 node_version: '0.10.30'
 node_tar_name: 'node-v{{ node_version }}.tar.gz'
 node_download_url: 'http://nodejs.org/dist/v{{ node_version }}/{{ node_tar_name }}'
 node_install_path: '/opt'
+
+
+#######
+# GNU #
+#######
+install_gnu_role_name: 'nabello.install_gnu'
+gnu_packages: []
+#  - { name: '', version: '', install: true, uninstall: false }
